@@ -12,3 +12,5 @@ then
     printf "MFA users ARN: \n"
     read mfa_arn
 fi
+
+python console.py $cloud $account_id $mfa_arn
