@@ -106,11 +106,15 @@ issuer = "Example.org"  # issuer name for signin url
     except Exception, e:
         print("Received error:", e)
         sys.exit(1)
+
+# For Google Cloud
 elif (cloud == "GCLOUD")
+    
+    GOOGLE_APPLICATION_CREDENTIALS = sys.argv[2]  # Account id of target account
 
     # Get credentials
     credentials = service_account.Credentials.from_service_account_file(
-        filename=os.environ['GOOGLE_APPLICATION_CREDENTIALS'],
+        filename=os.environ[GOOGLE_APPLICATION_CREDENTIALS],
         scopes=['https://www.googleapis.com/auth/cloud-platform'])
 
     # Create the Cloud IAM service object
